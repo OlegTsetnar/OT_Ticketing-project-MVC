@@ -1,6 +1,8 @@
 package com.cydeo.controller;
 
 
+import com.cydeo.dto.RoleDTO;
+import com.cydeo.dto.UserDTO;
 import com.cydeo.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +15,8 @@ public class UserController {
 
     @GetMapping("/create")
     public String createUser(Model model){
-    model.addAttribute("user", new User());
-
+    model.addAttribute("user", new UserDTO());
+    model.addAttribute("roles");
 
         return "user/create";
     }
