@@ -10,7 +10,8 @@ public interface RoleService extends CrudService<RoleDTO,Long> {
 
     RoleDTO myLogic (RoleDTO roleDTO, String name);    // if we need specific method for this class
 
-//   RoleDTO save (RoleDTO role);
+
+//    RoleDTO save (RoleDTO role);
 //
 //   RoleDTO findById (Long id);
 //

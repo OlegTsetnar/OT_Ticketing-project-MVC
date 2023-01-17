@@ -1,5 +1,7 @@
 package com.cydeo.service;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.util.List;
 
 /**
@@ -11,13 +13,12 @@ import java.util.List;
 public interface CrudService<T,ID> {
 
 
-    T save (T object);
+    T save(T object);
 
     List<T> findAll();
 
-    T findById (ID id);
+    T findById(ID id);
 
-    void delete (T object);
+    void deleteById(ID id);
 
-    void deleteById (ID id);
 }
