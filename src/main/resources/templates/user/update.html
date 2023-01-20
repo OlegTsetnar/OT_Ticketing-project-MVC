@@ -179,7 +179,7 @@
                                                     <!--When we click to update we should catch the username from "http://localhost:8080/user/update/shaun@cydeo.com" catch the id to know which user should be updated-->
                                                     <a class="btn btn-warning rounded-0"
                                                        th:href="@{/user/update/{id}(id=${user.userName})}">Update</a>
-                                                    <a href="#" class="delete-row">
+                                                    <a th:href="@{/user/delete/{id}(id=${user.userName})}" class="delete-row">
                                                         <button type="button" class="btn btn-secondary btn-sm">Delete
                                                         </button>
                                                     </a>
