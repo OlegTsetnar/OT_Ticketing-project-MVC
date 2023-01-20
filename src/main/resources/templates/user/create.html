@@ -37,14 +37,16 @@
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
                                                     <label for="firstname" class="col-form-label">First Name</label>
-                                                    <input id="firstname" type="text" placeholder="first name" class="form-control" th:field="*{firstName}">
+                                                    <input id="firstname" type="text" placeholder="first name"
+                                                           class="form-control" th:field="*{firstName}">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
                                                     <label for="lastname" class="col-form-label">Last Name</label>
-                                                    <input id="lastname" type="text" placeholder="last name" class="form-control" th:field="*{lastName}">
+                                                    <input id="lastname" type="text" placeholder="last name"
+                                                           class="form-control" th:field="*{lastName}">
                                                 </div>
                                             </div>
                                         </div>
@@ -52,15 +54,18 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
-                                                    <label for="emailaddress" class="col-form-label">Email Address</label>
-                                                    <input id="emailaddress" type="text" placeholder="email address" class="form-control" th:field="*{userName}">
+                                                    <label for="emailaddress" class="col-form-label">Email
+                                                        Address</label>
+                                                    <input id="emailaddress" type="text" placeholder="email address"
+                                                           class="form-control" th:field="*{userName}">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
                                                     <label for="phonenumber" class="col-form-label">Phone Number</label>
-                                                    <input id="phonenumber" type="tel" placeholder="phone number" class="form-control" th:field="*{phone}">
+                                                    <input id="phonenumber" type="tel" placeholder="phone number"
+                                                           class="form-control" th:field="*{phone}">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,14 +74,18 @@
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
                                                     <label for="password" class="col-form-label">Password</label>
-                                                    <input id="password" type="password" placeholder="password" class="form-control" th:field="*{passWord}">
+                                                    <input id="password" type="password" placeholder="password"
+                                                           class="form-control" th:field="*{passWord}">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="form-group">
-                                                    <label for="repassword" class="col-form-label">Confirm Password</label>
-                                                    <input id="repassword" type="password" placeholder="confirm your password" class="form-control" th:field="*{passWord}">
+                                                    <label for="repassword" class="col-form-label">Confirm
+                                                        Password</label>
+                                                    <input id="repassword" type="password"
+                                                           placeholder="confirm your password" class="form-control"
+                                                           th:field="*{passWord}">
                                                 </div>
                                             </div>
                                         </div>
@@ -86,10 +95,14 @@
                                                 <div class="form-group">
                                                     <label>Gender</label><br>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="radio-inline" th:field="*{gender}" th:value="MALE" class="custom-control-input"><span class="custom-control-label" >Male</span>
+                                                        <input type="radio" name="radio-inline" th:field="*{gender}"
+                                                               th:value="MALE" class="custom-control-input"><span
+                                                            class="custom-control-label">Male</span>
                                                     </label>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="radio-inline" th:field="*{gender}" th:value="FEMALE" class="custom-control-input"><span class="custom-control-label" >Female</span>
+                                                        <input type="radio" name="radio-inline" th:field="*{gender}"
+                                                               th:value="FEMALE" class="custom-control-input"><span
+                                                            class="custom-control-label">Female</span>
                                                     </label>
 
                                                 </div>
@@ -100,7 +113,8 @@
                                                     <label>Choose a Role</label>
                                                     <select name="role" th:field="*{role}" class="custom-select">
                                                         <option th:value="''" th:text="Select"></option>
-                                                        <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.description}"></option>
+                                                        <option th:each="role : ${roles}" th:value="${role.id}"
+                                                                th:text="${role.description}"></option>
 
                                                     </select>
                                                 </div>
@@ -127,7 +141,6 @@
                     </div>
 
                 </div>
-
 
 
                 <!-- ------------------------TABLE START----------------------------- -->
@@ -162,8 +175,15 @@
                                                 <td td th:text="${user.phone}"></td>
                                                 <td td th:text="${user.role.description}"></td>
                                                 <td class="actions">
-                                                    <a href="#"><button type="button" class="btn btn-warning btn-sm">Update</button></a>
-                                                    <a href="#" class="delete-row"><button type="button" class="btn btn-secondary btn-sm">Delete</button></a>
+                                                    <!-- ************************************ -->
+                                                    <!-- ************************************ -->
+                                                    <!--When we click to update we should catch the username from "http://localhost:8080/user/update/shaun@cydeo.com" catch the id to know which user should be updated-->
+                                                    <a class="btn btn-warning rounded-0"
+                                                       th:href="@{/user/update/{id}(id=${user.userName})}">Update</a>
+                                                    <a href="#" class="delete-row">
+                                                        <button type="button" class="btn btn-secondary btn-sm">Delete
+                                                        </button>
+                                                    </a>
                                                 </td>
                                             </tr>
 
