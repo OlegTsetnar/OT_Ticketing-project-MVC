@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserDTO {
 
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -18,5 +19,6 @@ public class UserDTO {
     private String phone;
     private RoleDTO role;
     private Gender gender;
+
 
 }
