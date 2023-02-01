@@ -72,6 +72,7 @@ public class TaskController {
 //    }
 
     @PostMapping("/update/{id}")
+    // spring check the field id in Pojo and get id from end point "/update/{id}" automatically
     public String updateTask(TaskDTO task) {
         taskService.update(task);
         return "redirect:/task/create";

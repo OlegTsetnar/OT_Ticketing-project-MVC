@@ -24,6 +24,8 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO, String> i
     @Override
     public ProjectDTO save(ProjectDTO object) {
 
+        // use this way because it can come from dataBase with another status
+
         if (object.getProjectStatus() == null) {
             object.setProjectStatus(Status.OPEN);
         }
@@ -38,7 +40,11 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO, String> i
 
     @Override
     public void update(ProjectDTO object) {
-
+        //We don't set a status of the project in the field when we update
+        // the status is null
+        // before, when we save a project in Data Generator, we put this project to map;
+        // then when we update, should catch this project from the map using its ID
+        // and set the status as it in a map
         ProjectDTO newproject = findById(object.getProjectCode());
 
         if (object.getProjectStatus() == null)
